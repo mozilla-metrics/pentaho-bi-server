@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docbase="webapps/pentaho/" path="/pentaho" reloadable="true">
+	<Resource auth="Container" driverClassName="org.hsqldb.jdbcDriver" factory="org.apache.commons.dbcp.BasicDataSourceFactory" maxActive="20" maxIdle="5" maxWait="10000" name="jdbc/Hibernate" password="password" type="javax.sql.DataSource" url="jdbc:hsqldb:hsql://localhost/hibernate" username="hibuser" validationQuery="select count(*) from INFORMATION_SCHEMA.SYSTEM_SEQUENCES"/>
+		
+	<Resource auth="Container" driverClassName="org.hsqldb.jdbcDriver" factory="org.apache.commons.dbcp.BasicDataSourceFactory" maxActive="20" maxIdle="5" maxWait="10000" name="jdbc/Quartz" password="password" type="javax.sql.DataSource" url="jdbc:hsqldb:hsql://localhost/quartz" username="pentaho_user" validationQuery="select count(*) from INFORMATION_SCHEMA.SYSTEM_SEQUENCES"/>
+  
+  <Resource name="jdbc/monetrix" auth="Container" type="javax.sql.DataSource" maxActive="20"
+    maxIdle="5" maxWait="10000" username="@MONETRIX.USER@" password="@MONETRIX.PASSWORD@"
+    factory="org.apache.commons.dbcp.BasicDataSourceFactory" driverClassName="@MONETRIX.DRIVER@"
+    url="@MONETRIX.URL@" />
+
+  
+  
+</Context>
