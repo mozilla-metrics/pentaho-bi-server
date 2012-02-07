@@ -1,8 +1,5 @@
-This document serves as a guideline for building a Pentaho server, 
-running the CTools and having access to dummy data.
-Here, it is assumed that a folder name /pentaho exists, where the pentaho, tomcat and project will exist. Feel free
-to use whichever path you see fit.
-
+This document serves as a guideline for building a Pentaho server, running the CTools and having access to dummy data.
+Here, it is assumed that a folder named /pentaho exists, where the pentaho, tomcat and project will exist. Feel free to use whichever path you see fit.
 
 ** Required tools:
 - git and svn client
@@ -10,25 +7,26 @@ to use whichever path you see fit.
 
 
 ** Installing pentaho (> 3.7)
-mkdir /pentaho #(take care of permissions, so that your regular user can write there)
+mkdir /pentaho #take care of permissions, so that your regular user can write there
 cd /pentaho
-svn co svn://source.pentaho.org/svnroot/bi-platform-v2/tags/3.10.0-stable pentaho-3.10 #(3.9 works fine, at Mozilla we still use 3.8)
+svn co svn://source.pentaho.org/svnroot/bi-platform-v2/tags/3.10.0-stable pentaho-3.10 #(3.9 also works fine, at Mozilla we still use 3.8)
 
 ** Install Apache Tomcat (> 6.0)
 - Download it from: http://archive.apache.org/dist/tomcat/tomcat-6/
 wget http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.35/bin/apache-tomcat-6.0.35.tar.gz
-tar xvfz apache-tomcat*.tar.gz #a folder named apache-tomcat-6.0.35 should exist now in /pentaho
+tar xvfz apache-tomcat*.tar.gz #a folder named apache-tomcat-6.0.35 should exist now under /pentaho
 
 ** Install the project
-git clone git@github.com:mozilla-metrics/pentaho-bi-server.github project-metrics #it's VERY IMPORTANT that the folder has a name like project-*
+git clone git@github.com:mozilla-metrics/pentaho-bi-server.github project-metrics #it is VERY IMPORTANT that the folder has a name like project-*
 mkdir /pentaho/project-metrics-solution #this can be another solution repository with the specific product solution that you want
 ln -s /pentaho/project-metrics-solution /pentaho/project-metrics/solution #link to be UPDATED whenever you change the product where you're working at
 cp config/build-pmartins.properties config/build-MYNAME.properties #edit the file accordingly, check the paths!
 #check the paths again on your build-MYNAME.properties
 cd /pentaho
-ant -Dproject=metrics -Denv=MYNAME  dist-clean all #instead of "metrics", use the name you gave to the folder project-*
+ant -Dproject=metrics -Denv=MYNAME  dist-clean all #instead of "metrics", use the name you gave to the folder "project-*"
 
 ** Install the ctools (run ctools-installer for help)
+cd project-metrics
 ./ctools-installer.sh -s /pentaho/projec-metrics/solution -w /pentaho/target-dist/server/webapps/pentaho # '-y' says "yes" to all
 
 ** Start hypersonic
@@ -39,13 +37,12 @@ sh start_hypersonic.sh #keep it running, go to another shell
 ant -Dproject=metrics -Denv=MYNAME run
 
 ** Access the Pentaho User Console (PUC)
-Open your browser at http://127.0.0.1:8080/pentaho/Home (user: joe, password: password)
-Go to tools -> refresh repository cache
-Go to View -> Browser
-Click on CDE Sample Dashboard and then on the 2nd icon "Edit" (it opens CDE, double click on the tab to take it out from PUC)
-Double click on the CDE Sample Dashboard (double-click on the tab to take it out from PUC), to view the dashboard.
+- Open your browser at http://127.0.0.1:8080/pentaho/Home (user: joe, password: password)
+- Go to tools -> refresh repository cache
+- Go to View -> Browser
+- Click on CDE Sample Dashboard and then on the 2nd icon "Edit" (it opens CDE, double click on the tab to take it out from PUC)
+- Double click on the CDE Sample Dashboard (double-click on the tab to take it out from PUC), to view the dashboard.
 
 ... and you're ready to start :)
-
 
 Last updated: 2012-02-07 by PMartins
