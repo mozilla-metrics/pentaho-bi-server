@@ -17,7 +17,8 @@ wget http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.35/bin/apache-tomcat-6.
 tar xvfz apache-tomcat*.tar.gz #a folder named apache-tomcat-6.0.35 should exist now under /pentaho
 
 ** Install the project
-git clone git@github.com:mozilla-metrics/pentaho-bi-server.github project-metrics #it is VERY IMPORTANT that the folder has a name like project-*
+git clone https://<githubusername>@github.com/mozilla-metrics/pentaho-bi-server.git project-metrics #VERY IMPORTANT that the folder is named "project-*"
+(Alternative method, might not work) git clone git@github.com:mozilla-metrics/pentaho-bi-server.github project-metrics
 mkdir /pentaho/project-metrics-solution #this can be another solution repository with the specific product solution that you want
 ln -s /pentaho/project-metrics-solution /pentaho/project-metrics/solution #link to be UPDATED whenever you change the product where you're working at
 cp config/build-pmartins.properties config/build-MYNAME.properties #edit the file accordingly, check the paths!
