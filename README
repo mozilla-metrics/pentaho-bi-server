@@ -36,14 +36,14 @@ cd /pentaho/target-build/bi-platform-sample-data
 sh start_hypersonic.sh #keep it running, go to another shell
 
 ** Start the server
-ant -Dproject=metrics -Denv=MYNAME running
+ant -Dproject=metrics -Denv=MYNAME run
 
 ** Access the Pentaho User Console (PUC)
 Open your browser at http://127.0.0.1:8080/pentaho/Home (user: joe, password: password)
 Go to tools -> refresh repository cache
 Go to View -> Browser
 Click on CDE Sample Dashboard and then on the 2nd icon "Edit" (it opens CDE, double click on the tab to take it out from PUC)
-Double click on the CDE Sample Dashboard (double-click on the tab to take it out from PUC)
+Double click on the CDE Sample Dashboard (double-click on the tab to take it out from PUC), to view the dashboard.
 
 ... and you're ready to start :)
 
