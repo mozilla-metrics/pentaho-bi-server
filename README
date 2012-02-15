@@ -3,6 +3,7 @@ Here, it is assumed that a folder named /pentaho exists, where the pentaho, tomc
 
 ** Required tools:
 - git and svn client
+- install junit (in my case, I it on /usr/share/ant/lib/junit-4.8.2.jar)
 - ant, ivy, JDK, etc
 
 
@@ -23,14 +24,14 @@ cd /pentaho
 cp project-metrics/build.xml.cbf-3.8 build.xml #or link it, if you want
 mkdir /pentaho/project-metrics-solution #this can be another solution repository with the specific product solution that you want
 ln -s /pentaho/project-metrics-solution /pentaho/project-metrics/solution #link to be UPDATED whenever you change the product where you're working at
-cp /pentaho/projec-metrics/config/build-pmartins.properties /pentaho/projec-metrics/config/build-MYNAME.properties #edit the file accordingly, check the paths!
+cp /pentaho/project-metrics/config/build-pmartins.properties /pentaho/project-metrics/config/build-MYNAME.properties #edit the file accordingly, check the paths!
 #check the paths again on your build-MYNAME.properties
 cd /pentaho
 ant -Dproject=metrics -Denv=MYNAME  dist-clean all #instead of "metrics", use the name you gave to the folder "project-*"
 
 ** Install the ctools (run ctools-installer for help)
 cd project-metrics
-./ctools-installer.sh -s /pentaho/projec-metrics/solution -w /pentaho/target-dist/server/webapps/pentaho # '-y' says "yes" to all
+./ctools-installer.sh -s /pentaho/project-metrics/solution -w /pentaho/target-dist/server/webapps/pentaho # '-y' says "yes" to all
 
 ** Start hypersonic
 cd /pentaho/target-build/bi-platform-sample-data
@@ -48,4 +49,4 @@ ant -Dproject=metrics -Denv=MYNAME run
 
 ... and you're ready to start :)
 
-Last updated: 2012-02-07 by PMartins
+Last updated: 2012-02-15 by PMartins
