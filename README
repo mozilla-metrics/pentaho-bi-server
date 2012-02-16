@@ -22,8 +22,7 @@ git clone https://<githubusername>@github.com/mozilla-metrics/pentaho-bi-server.
 (Alternative method, might not work) git clone git@github.com:mozilla-metrics/pentaho-bi-server.github project-metrics
 cd /pentaho
 cp project-metrics/build.xml.cbf-3.8 build.xml #or link it, if you want
-mkdir /pentaho/project-metrics-solution #this can be another solution repository with the specific product solution that you want
-ln -s /pentaho/project-metrics-solution /pentaho/project-metrics/solution #link to be UPDATED whenever you change the product where you're working at
+(under /pentaho/projec-metrics/solution, you can add more solutions by linking them or cloning them directly there)
 cp /pentaho/project-metrics/config/build-pmartins.properties /pentaho/project-metrics/config/build-MYNAME.properties #edit the file accordingly, check the paths!
 #check the paths again on your build-MYNAME.properties
 cd /pentaho
