@@ -1,0 +1,1532 @@
+
+body {
+    font-family: 'Trebuchet MS',Arial,Sans;
+    color: #242a2c;
+
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid #676767;
+    background: #fff url('images/header/background/background.png') 0 0 repeat-x;
+    background-color: #ECF3F6;
+}
+
+.blockUI.blockMsg.blockPage.ui-draggable{
+    border: 0px !important;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    background: #000 !important;
+    height: 100px;
+    width: 0px !important;
+}
+
+.blockUI.blockOverlay{
+	background-color: #ffffff !important;
+	opacity: 0.8 !important;
+}
+
+/***************************************************************************
+ *                          UTILITY functions                              *
+ ***************************************************************************/
+
+.animatedCells{
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    -o-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+}
+
+.transparentCells{
+    opacity:0;
+}
+
+.hiddenCells{
+    display:none;
+}
+
+
+/***************************************************************************
+ *                          HEADER styling                                 *
+ ***************************************************************************/
+
+
+/* ***  needed on CDE Style template 'mozillaRevamp'  *** */
+
+#topHeader {
+    width: 950px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#topHeader a.mozilla {
+    position: relative;
+    float: right;
+    display: block;
+    height: 49px;
+    width: 118px;
+    background: url('images/header/tab/mozillaTab.png') 100% 0 no-repeat;
+    overflow: hidden;
+}
+
+
+/* ***  not on CDE Style template *** */
+
+.header {
+    /* font-size: 16px; */
+    height: 80px;
+}
+
+.header > div {
+    margin-top: 13px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    text-align: left;
+    vertical-align: middle;
+    /*border: 1px solid transparent;*/  /* feedback Nuno */
+}
+
+.header > div:hover {
+    color: #006CD8; /* feedback Nuno */
+    cursor: pointer;
+}
+
+
+.headerBox {
+    /*    margin-top: 15px;
+        font-weight: bold;
+        height: 36px;
+        line-height: 32px;
+        text-align: left;
+        vertical-align: middle; */
+    font-weight: bold;
+    /*border: 1px solid transparent;*/
+}
+
+
+.headerBox .chzn-results {
+    font-weight: normal;
+}
+
+.headerBox .chzn-container.chzn-container-single, 
+.headerBox .chzn-container.chzn-container-single a {
+	border: none;
+    width: 100%;
+    height: 100%;
+    line-height: 36px;
+}
+
+.headerBox .chzn-container-single .chzn-single span {
+    font-size: 16px;    /* TODO: nem todos tem este tamanho */
+	line-height: 22px;
+    text-transform: capitalize;
+    color: #000;
+	/*text-indent: 5px;*/
+}
+
+.headerBox .chzn-container-single .chzn-single div {
+    height: 36px;
+    width: 12px;
+    background: none;
+    border-left: 0px;
+}
+
+.headerBox .chzn-container-single .chzn-search input,
+.dashSelect .chzn-container-single .chzn-search input  {
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+
+.headerBox .chzn-container-single .chzn-drop,
+.dashSelect .chzn-container-single .chzn-drop  {
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    text-align: left;
+}
+
+.headerBox.dateSelector,
+.headerBox.dateRangeSelector{
+    border: 1px solid #839298;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.headerBox.dateSelector:hover,
+.headerBox.dateRangeSelector:hover{
+	border: 1px solid #006CD8;
+}
+
+/* ***  BACK BUTTON  *** */
+#backButton {
+    width: 35px;
+    /*
+    height: 36px;  
+    margin-top: 15px;
+    */
+}
+
+#backButton a {
+    background: url('images/header/backButton.png') no-repeat scroll 0 0 transparent;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    text-indent: -200px;  
+    width: 35px;
+    height: 36px;  
+	top: 13px;
+}
+
+#backButton a:hover {
+    background: url('images/header/backButton.png') no-repeat scroll -35px transparent;  
+}
+
+#backButton a:active {
+    background: url('images/header/backButton.png') no-repeat scroll -70px transparent;  
+}
+
+
+/* ***  DATE PICKER SELECTOR  *** */
+.dateSelector {
+    /*
+    height: 36px;
+    font-weight: bold;
+    line-height: 32px;
+    text-align: left;
+    vertical-align: middle; */
+    /*border: 1px solid transparent;*/  /* feedback Nuno */
+}
+
+.dateSelector input {
+	background: url("images/header/arrowGrey.png") no-repeat scroll 97% center transparent;
+    border: 0 none; 
+    font-family: 'Trebuchet MS',Arial,Sans;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0;
+	text-align: left;
+    text-indent: 15px;
+    height: 100%;
+    /*    vertical-align: middle;  */
+}
+.dateSelector input:hover {
+	background: url("images/header/arrowBlue.png") no-repeat scroll 97% center transparent;
+    color: #006CD8; /* feedback Nuno */
+    cursor: pointer;
+}
+
+
+/********************************
+       DATE RANGE SELECTORS - paula
+ ********************************/
+
+.dateRangeSelector {
+    font-weight: normal;
+}
+
+.dateRangeSelector .chzn-container.chzn-container-single, 
+.dateRangeSelector .chzn-container.chzn-container-single a {
+    width: 150px !important;
+    text-align: center;
+}
+
+.dateRangeSelector .chzn-container.chzn-container-single a :hover {
+    color: #006CD8;
+    cursor: pointer;
+}
+
+.dateRangeSelector .chzn-container-single .chzn-single span {
+    margin-right: 0px;
+}
+
+.dateRangeSelector .chzn-container-single .chzn-drop {
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    text-align: left;
+    width: 146px !important;
+}
+
+/* WE DON'T WANT SEARCH INPUT */
+/*
+.dateRangeSelector .chzn-container-single .chzn-search input {
+    width: 155px !important;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+*/
+
+.dateRangeSelector .chzn-results {
+    margin-top: 4px;
+}
+
+.dateRangeSelector .chzn-container-active .chzn-single {
+    border: 0px;
+    border-radius: 0px 0px;
+    -moz-border-radius: 0px 0px;
+    -webkit-border-radius: 0px 0px;
+    box-shadow: 0px 0px;
+}
+
+.headerContent {
+    position: relative;
+    top: -50px;
+}
+
+#dateLabels {
+    font-size: 9px;
+	margin-top: 10px;
+}
+
+.refLabel{
+	margin-left: 15px;
+}
+
+
+
+/* *****************************
+            DATE PICKER
+   ***************************** */
+
+.ui-daterangepickercontain {
+    top: 42.5px !important;
+}
+.ui-daterangepickercontain > .ui-widget-content {
+    border: 2px solid #006CD8;
+}
+.ui-daterangepicker ul {
+    width: 16.5em;
+}
+.ui-datepicker td a {
+    padding: 7px 0;
+}
+
+
+
+
+#ui-datepicker-div {
+    top: 48.5px !important;
+}
+#ui-datepicker-div.ui-widget-content {
+    border: 2px solid #006CD8;
+}
+
+
+/* End of Header styling */
+
+
+
+
+
+
+
+/***************************************************************************
+ *                          MAIN CONTENT styling                           *
+ ***************************************************************************/
+
+.mainContent {
+    position: relative;
+    top: -22px;
+}
+
+
+div.titleRow {
+    line-height: 24px;
+    margin-bottom: 5px; /* feedback Nuno*/
+}
+
+.dataCellTitle {
+    font-size: 20px;
+}
+
+/* See Bugzilla QA dashboard, for an example */
+.dataCellTitleSelector {
+    height: 24px;
+}
+.dataCellTitleSelector div.chzn-container-single .chzn-single {
+	border: 1px solid #AAAAAA;
+}
+.dataCellTitleSelector div.chzn-container-single .chzn-single {
+	width: 192px;
+    color: #242A2C;
+    height: 24px;
+    line-height: 24px;
+}
+.dataCellTitleSelector .chzn-container {
+    font-size: 20px;
+}
+.dataCellTitleSelector .chzn-container .chzn-drop {
+	width: 190px !important;
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+}
+.dataCellTitleSelector .chzn-container-single .chzn-search input {
+	width: 155px !important;
+}
+.dataCellTitleSelector div.chzn-container-single .chzn-single:hover {
+	border: 1px solid #006cd8;
+}
+
+
+
+/* ***  EXPORT  AND  OPTIONS  (tools) *** */
+
+.dataCellTools {
+    height: 24px;
+    line-height: 24px;
+    /*vertical-align: middle;*/
+    text-align: right;
+}
+
+.exportLink {
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 9px;
+    text-align: right;
+}
+
+.exportLink:hover {
+    color: #006CD8;
+}
+
+.optionsButton {
+    background: url('images/dataCell/cogs.png')  no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+}
+.optionsButton:hover {
+    background: url('images/dataCell/cogs.png')  no-repeat scroll -16px transparent;
+}
+
+
+/**********************
+       POPUP
+ **********************/
+
+.exportOptions div {
+    font-size: 10px;
+    line-height: 20px;
+    height: auto;
+}
+.exportOptions div:hover {
+    color: #006CD8;
+    cursor: pointer;
+}
+
+.popupContainer{
+    background: url("images/popup/popupBg.png") repeat-x scroll 0 bottom transparent;
+}
+
+.popupComponent {
+    border: 2px solid #006CD8;
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+
+    padding: 10px 0px;
+    text-indent: 10px;
+}
+
+.popupComponent a.close {
+    background: url("images/selectors/x.png") no-repeat scroll left 0px transparent;
+    height: 16px;
+    width: 10px;
+    right: 2px;
+    top: 0px;
+}
+.popupComponent a.close:hover {
+    background: url("images/selectors/x.png") no-repeat scroll -10px 0px transparent;
+    cursor: pointer;
+}
+
+.popupComponent.north .arrow {
+    background-image: url("images/popup/vertexDown.png");
+}
+.popupComponent.south .arrow {
+    background: url("images/popup/vertexUp.png");
+}
+
+.popupComponent > div.exportElement{
+    text-indent: 0px;
+    padding: 0px 10px;
+} 
+
+/* *********************************** */
+
+
+div.dataCellContent {
+    background-color: #fff;
+    margin-bottom: 30px;
+    margin-left: -1px;
+    margin-right: -1px;
+    padding: 10px 0px 10px 0px;
+    border: 0px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px; 
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+
+
+div.filterRow {
+    margin-bottom: 6px;
+}
+
+
+/* ***  DOUBLE FILTERS  *** */
+div.selectorTop {
+    height: 30px;
+    background-color: #FCFDFD;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #E9EEF0), color-stop(0.5, white));
+    background-image: -webkit-linear-gradient(center bottom, #E9EEF0 0%, white 50%);
+    background-image: -moz-linear-gradient(center bottom, #E9EEF0 0%, white 50%);
+    background-image: -o-linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    background-image: -ms-linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    background-image: linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E9EEF0', endColorstr='#FCFDFD',GradientType=0 );
+    border: 1px solid #839298;
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+div.selectorBottom {
+    min-height: 33px;
+    height: auto;
+    background-color: #CCD8DD;
+    border-left: 1px solid #839298;
+    border-right: 1px solid #839298;
+    border-bottom: 1px solid #839298;
+    border-top: 1px solid #fff;
+    border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -webkit-border-radius: 0px 0px 5px 5px;
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+div.selectorTopLabel {
+    font-size: 9px;
+    font-weight: normal;
+    text-indent: 15px;
+    line-height: 28px;        
+}
+
+.globalFilterFat .selectorTopLabel {
+    line-height: 12px;        
+}
+
+
+
+div.selectorBottomLabel {
+    font-size: 9px;
+    font-weight: normal;
+    margin-top: 8px;
+    text-indent: 15px;
+}
+
+.globalFilterFat div.selectorTopLabel {
+    text-align: center;
+    text-indent: 0px;
+}
+
+
+
+div.selectorLocalLabel {
+    font-size: 9px;
+    font-weight: normal;
+    text-indent: 15px;
+    line-height: 27px; /* feedback Nuno */
+    /* margin-top: 4px; */
+}
+
+div.multiSelectorLocal > div {
+    /*top: 3px;*/
+}
+
+
+/*TODO: tentat usar a classe definida acima! Apagar esta */
+.repositorySelector{
+    margin-top: 3px;
+    height: 25px !important;
+}
+
+
+.selectorMeasuresTop .chzn-container-multi .chzn-choices {
+    /*height: 20px !important;*/     /* WARNING: must be auto. already is by default */
+    margin-top: 4px;
+    border: 1px solid #839298;
+}
+
+.selectorMeasuresTop .chzn-container-multi .chzn-choices:hover,
+.selectorVariablesBottom .chzn-container-multi .chzn-choices:hover {
+    border: 1px solid #006cd8;
+}
+
+.selectorMeasuresTop .chzn-container .chzn-drop,
+.selectorCompareBottom .chzn-container .chzn-drop,
+.selectorVariablesBottom .chzn-container .chzn-drop {
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.selectorCompareBottom {
+    margin-top: 7px;
+}
+
+.selectorCompareBottom  .chzn-container-single .chzn-single span {
+    font-size: 10px;
+}
+
+.selectorVariablesBottom {
+    margin-top: 5px;
+}
+
+.selectorVariablesBottom .chzn-container-multi .chzn-choices {
+    width: 300px;
+    border: 1px solid #839298;
+}
+
+.selectorVariablesBottom .chzn-container-multi.chzn-choices {
+	height: 15px;
+}
+
+/* Global filter */
+.globalFilter {
+    border: 1px solid #839298;
+    margin-left: -1px;
+    margin-right: -1px;
+    border-radius: 5px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #e9e9e9 10%, #839298 150%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#e9e9e9), color-stop(150%,#839298));
+    background: -webkit-linear-gradient(top, #e9e9e9 10%,#839298 150%);
+    background: -o-linear-gradient(top, #e9e9e9 10%,#839298 150%);
+    background: -ms-linear-gradient(top, #e9e9e9 10%,#839298 150%);
+    background: linear-gradient(top, #e9e9e9 10%,#839298 150%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9e9e9', endColorstr='#839298',GradientType=0 );
+}
+
+.globalFilterVertical {
+    margin-top: 29px;
+    margin-right: 9px;
+    width: 150px !important;
+}
+
+.globalFilterHorizontal {
+    /* height: 20px; */
+    height: auto;   /*WARNING: needed by chosen (when we have many selected options) */
+    /*    padding: 3px 0px;*/
+    min-height: 27px;   /* feedback Nuno */
+    margin-bottom: 20px;
+}
+
+.globalFilterHorizontal.globalFilterFat {
+    height: auto;
+    min-height: 44px;
+}
+
+.globalFilterHorizontal.localFilter {
+    margin-bottom: 0px;
+
+    min-height: 25px; /*TODO: APAGAR*/
+}
+
+.globalFilterHorizontal .chzn-container {
+    margin-top: 3px;
+}
+
+
+.filterColumn {
+    padding-right: 0px;
+    padding-bottom: 15px;
+}
+
+.filterBorder{
+	border-bottom: 1px solid #839298;
+	margin-left: 10px;
+	width: 130px;
+}
+
+.globalFilterVertical .chzn-container.chzn-container-single {
+    font-size: 9px; /*TODO: confirmar*/
+    text-align: center;
+    width: 124px !important;
+    height: 18px;
+    line-height:18px;
+    margin-left: 12px;
+    border-radius: 4px;  
+    border: 1px solid #839298;
+
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #e9e9e9 10%, #839298 150%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#e9e9e9), color-stop(150%,#839298));
+    background: -webkit-linear-gradient(top, #e9e9e9 10%,#839298 150%);
+    background: -o-linear-gradient(top, #e9e9e9 10%,#839298 150%);
+    background: -ms-linear-gradient(top, #e9e9e9 10%,#839298 150%);
+    background: linear-gradient(top, #e9e9e9 10%,#839298 150%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9e9e9', endColorstr='#839298',GradientType=0 );    
+}
+
+
+.globalFilterVertical .chzn-container.chzn-container-single:hover {
+    border: 1px solid #006CD8;
+}
+
+.globalFilterVertical .chzn-container.chzn-container-single .chzn-drop {
+    width: 120px !important;
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.middleSelectObj .chzn-container .chzn-drop,
+.bottomSelectObj .chzn-container .chzn-drop {
+    width: 116px !important;
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.middleSelectCompareObj .chzn-container .chzn-drop,
+.bottomSelectCompareObj .chzn-container .chzn-drop {
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+
+.globalFilter div.filterTitle {
+    font-size: 9px;
+    font-weight: normal;
+    margin-top: 15px;
+}
+
+.globalFilterVertical div.filterSel > div,
+.globalFilterVertical div.filterSel > select {
+    margin-left: 15px;
+}
+
+.globalFilterVertical .filterTitle {
+    text-indent: 16px;
+}
+
+.globalFilterVertical .filterSel .chzn-container  .chzn-choices:hover {
+    border: 1px solid #006CD8;
+}
+
+.filterSel .chzn-container-single .chzn-search input {
+    width: 85px !important;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+
+.filterSel .chzn-container-single .chzn-drop {
+    text-align: left;
+}
+
+.bottomMeasuresSelect .chzn-container-single .chzn-search input {
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+
+.bottomMeasuresSelect .chzn-container .chzn-drop {
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+/* ***  Chosen styling  *** */
+
+.chzn-container .chzn-results .highlighted {
+    background: none repeat scroll 0 0 #006CD8;
+}
+
+.chzn-container-multi .chzn-choices {
+    border-radius: 4px 4px 4px 4px;
+}
+
+div.chzn-container-single .chzn-single {
+    border: none;
+    background: transparent;
+    height: 17px;
+    line-height: 17px;
+    padding-left: 0px;
+    text-align: center;
+}
+
+div.chzn-container-single .chzn-single div b {
+    background: url('images/header/singleSelectorArrow.png') no-repeat scroll 0px 55% transparent;  
+    overflow: hidden;
+    width: 12px;
+}
+
+div.chzn-container-single .chzn-single div b:hover {
+    background: url('images/header/singleSelectorArrow.png') no-repeat scroll -12px 55% transparent;  
+}
+
+
+
+.globalFilterVertical .chzn-container.chzn-container-multi, 
+.globalFilterVertical .chzn-container.chzn-container-multi a {
+    width: 115px !important;
+}
+
+.globalFilterHorizontal .chzn-container.chzn-container-multi, 
+.globalFilterHorizontal .chzn-container.chzn-container-multi a {
+    width: 100% !important;
+	margin-top: 0px;
+}
+
+
+.globalFilter .chzn-container.chzn-container-multi ul.chzn-choices {
+    /*height: 14px !important;*/    /* WARNING: must be auto. already is by default */
+    width: 100% !important;
+    min-height: 20px;
+    padding: 0px;
+}
+
+.globalFilter .chzn-container.chzn-container-multi ul.chzn-choices:hover {
+    border: 1px solid #006CD8;
+}
+
+.globalFilter .chzn-container.chzn-container-multi ul.chzn-choices li {
+    font-size: 9px;
+    margin: 1px 2px;
+    height: 14px;
+    line-height: 14px;
+    padding: 1px 19px 1px 2px;
+    overflow: hidden;
+}
+
+.globalFilter .chzn-container.chzn-container-multi ul.chzn-choices li span {
+    font-size: 9px;
+    line-height: 10px;
+    height: 10px;
+}
+
+.globalFilter .chzn-container.chzn-container-multi ul.chzn-choices li a {
+    height: 16px;
+    width: 10px !important;
+}
+
+.globalFilter .chzn-container .chzn-drop {
+    border: 2px solid #006CD8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+
+.globalFilterHorizontal .chzn-container-multi .chzn-choices .search-field input {
+    width: 100%;
+    padding: 0px;
+    font-size: inherit;
+}
+
+.globalFilterHorizontal .chzn-drop li {
+    font-size:10px; /*TODO: confirmar*/
+}
+
+.globalFilter .chzn-container-multi .chzn-choices .search-choice .search-choice-close {
+    background: url("images/selectors/x.png") no-repeat scroll left 2px transparent;
+    display: block;
+    font-size: 1px;
+    height: 14px;
+    overflow: hidden;
+    position: absolute;
+    right: 1px;
+    top: -1px;
+}
+
+.globalFilter .chzn-container-multi .chzn-choices li:hover .search-choice-close {
+    background: url("images/selectors/x.png") no-repeat scroll -10px 2px transparent;
+}
+
+.globalFilterHorizontal select{
+    min-width: 80px;
+}
+
+
+/* ***  multiButton component styling  *** */
+
+.multiButtonSelector {
+    height: 26px;
+    line-height: 26px;
+}
+
+.multiButtonSelectorRight > div {
+    float: right;
+    margin-right: 15px;
+}
+.multiButtonSelectorLeft > div {
+    float: left;
+    margin-left: 15px;
+}
+
+.multiButtonSelector div button {
+    color: #242a2c;
+    font-size: 9px;
+    font-weight: normal;
+    font-family: 'Trebuchet MS',Arial,Sans;
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+.multiButtonSelector div button:hover {
+	color: #242a2c;
+    border: 1px solid #006CD8;
+    box-shadow: 1px 1px 1px #006CD8 inset;
+}
+
+.multiButtonSelector .pentaho-toggle-button {
+    display: inline-block;
+}
+
+.multiButtonSelector .pentaho-toggle-button:first-child button {
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0px 0px 5px;   
+}
+
+.multiButtonSelector .pentaho-toggle-button:last-child button {
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 0px;
+    -webkit-border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 5px 5px 0px;   
+}
+
+.multiButtonSelector .pentaho-toggle-button-up button {
+    color: #839298;
+}
+
+.multiButtonSelector .pentaho-toggle-button-up button {
+    background: -moz-linear-gradient(center top , #F0F0F0 40%, #839298 200%) repeat scroll 0 0 transparent;
+}
+
+.multiButtonSelector .pentaho-toggle-button-down button {
+	background: #ffffff;
+}
+
+.multiButtonSelector .pentaho-toggle-button-down button {
+    border: 1px solid #242a2c;
+}
+
+
+
+/* single button styling */
+
+.buttonSelector {
+    height: 26px;
+    line-height: 26px;
+}
+
+
+.buttonSelector button {
+/*     color: #242a2c; */
+    font-size: 9px;
+    font-weight: normal;
+    font-family: 'Trebuchet MS',Arial,Sans;
+    line-height: 18px;
+    vertical-align: middle;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;   
+    color: #839298;
+    background: -moz-linear-gradient(center top , #F0F0F0 40%, #839298 200%) repeat scroll 0 0 transparent;
+}
+
+.buttonSelector button:hover {
+	color: #242a2c;
+	border: 1px solid #006cb8;
+	box-shadow: 1px 1px 1px #006cb8 inset;
+}
+
+
+.buttonSelector button.ui-state-active  {
+  background: #ffffff;
+  border: 1px solid #242a2c;
+}
+
+
+
+
+
+
+
+/* Table drawFunction classes */
+
+/*
+.tableBar {
+
+}
+
+.tableArrow {
+  
+}
+
+.tableArrow-up {
+  
+}
+
+
+.tableSparkBar {
+  
+}
+*/
+
+
+
+
+
+/* *** TABLE styling  *** */
+
+.tableComponent thead th:not(.sorting_disabled) {
+    cursor: pointer;
+}
+
+.dataTables_filter {
+    margin-top: 2px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input.text:focus, input.title:focus, textarea:focus {
+    border: 1px solid #006CD8;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.tableTitle {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+
+th, td, caption {
+    padding: 0px 0px;
+}
+
+tr {
+    height: 20px;
+    line-height: 0;
+}
+
+
+.contentTable.withoutHorizontalLines .dataTables_wrapper {
+    margin: 0 20px;
+}
+
+.dataTables_wrapper {
+    min-height: 0px;
+    margin: 0 10px;
+}
+
+.mainContent .dataTables_filter {
+    display: none;
+    float: none;
+    width: inherit;
+    text-align: left;
+}
+
+.mainContent .dataTables_filter input[type="text"] {
+    width: 70%;
+    margin: 0px;
+    background: white url('images/selectors/search.png') no-repeat right center;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.mainContent .dataTables_filter input[type="text"]:hover {
+    border: 1px solid #006CD8;
+}
+
+.dataTables_info {
+    font-size: 9px;
+    width: 55%;
+    /*color: #242a2c;*/
+    /*margin-left: 10px;*/
+} 
+
+.dataTables_info,
+.dataTables_paginate {
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    text-align: left;
+}
+
+thead th,
+tr.odd td,
+tr.even td,
+tr.odd td.sorting_1,
+tr.even td.sorting_1 {
+    background: none;
+    border: 0;
+}
+
+
+div.contentTable {
+    min-height: 150px;
+}
+
+div.contentTable thead th {
+    background-color: transparent;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 0;
+    text-align: left;  /*LATEST UPDATES (feedback nuno)*/
+}
+
+.contentTable thead tr {
+    line-height: 12px;
+}
+
+.contentTable tbody tr {
+    text-align: left;
+}
+
+div.contentTable tbody tr.odd,
+div.contentTable tbody tr.even {
+    background-color: transparent;
+    font-size: 11px;
+    font-weight: normal;
+    height: 30px;
+    /*    line-height: 30px;*/
+}
+
+
+/* To use in tables with details */
+/*div.expandingRowsTable tbody tr.odd:hover,
+div.expandingRowsTable tbody tr.even:hover {
+    cursor: pointer;
+}*/
+div.expandingRowsTable tbody tr:hover{
+    cursor: pointer;
+    background-color: #EAF4FE;
+}
+
+div.expandingRowsTable tbody tr.odd.active,
+div.expandingRowsTable tbody tr.even.active {
+    border-top: 1px solid #006CD8;
+    border-bottom: 1px solid #006CD8;
+    background: #eaf4fe;
+}
+
+
+div.contentTable .tableComponent tr {
+    height: 30px;
+    border-bottom: 1px solid #ccd8dd;
+    border-top: 1px solid transparent;
+}
+
+.tableComponent
+{
+    border-collapse: collapse;
+}
+
+div.contentTable.withoutHorizontalLines .tableComponent tr {
+    border: 0px;
+}
+
+
+
+div.contentTable table.tableComponent td.text {
+    text-align: right;
+}
+
+div.contentTable table.tableComponent td.compare {
+    color: #007dc9;
+}
+
+div.contentTable table.tableComponent td.current {
+    color: #000;
+}
+
+div.contentTable table.tableComponent tbody tr.selected td {
+    border-top: 1px solid #007dc9;
+    border-bottom: 1px solid #007dc9;
+}
+
+div.contentTable table.tableComponent td.selected {
+    color: #007dc9;
+    font-weight: bold;
+}
+
+.contentTable .tableComponent th.bubblechart,
+.contentTable .tableComponent td.bubblechart {
+    text-align: center;
+    width: 30px;
+}
+
+div.contentTable thead th.autoString,
+.tableComponent tbody tr td.autoString {
+    ext-indent: 28px;
+}
+
+
+div.contentTable table.tableComponent td, 
+div.contentTable table.tableComponent th, 
+div.contentTable table.tableComponent caption {
+    padding: 0px;
+}
+
+.tableComponent th.numeric, 
+.tableComponent td.numeric {
+    text-align: right;
+}
+
+div.contentTable table.tableComponent th.growth{
+    padding-right: 25px;
+    text-align: right;
+}
+div.contentTable table.tableComponent td.growth {
+    padding-right: 25px;
+    text-align: right;
+}
+
+
+div.detailsTable table.tableComponent th.growth{
+    text-align: left;
+    text-indent: 20px;
+}
+
+
+div.contentTable table.tableComponent td.positive {
+    background: transparent url('images/itemsTablesCharts/up.png') no-repeat right center;
+}
+div.contentTable table.tableComponent td.negative {
+    background: transparent url('images/itemsTablesCharts/down.png') no-repeat right center;
+}
+div.contentTable table.tableComponent td.stable {
+    background: transparent url('images/itemsTablesCharts/stable.png') no-repeat right center;
+}
+
+
+a.info {
+    display: inline-block;
+    background: transparent url('images/itemsTablesCharts/userInfo.png') no-repeat scroll 0px 0px;
+    height: 17px;
+    width: 17px;
+    border: 0px;
+    padding: 0;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    float: left;
+}
+a.info:hover {
+    background: transparent url('images/itemsTablesCharts/userInfo.png') no-repeat scroll -17px 50%;
+}
+div.autoString{
+    margin-top: 16px;
+
+}
+
+
+/* sorting */
+
+.contentTable .tableComponent th.sorting:hover,
+.contentTable .tableComponent th.sorting_asc:hover,
+.contentTable .tableComponent th.sorting_desc:hover{
+	color: #006CD8;
+}
+
+.contentTable .tableComponent th.sorting_asc,
+.contentTable .tableComponent th.sorting_desc{
+	color: #006CD8;
+}
+
+.contentTable .tableComponent th.sorting {
+    background-position: 90% 50%;
+}
+
+
+
+.contentTable .tableComponent td,
+.contentTable .tableComponent td.string,
+.contentTable .tableComponent td.numeric {
+    font-family: 'Trebuchet MS',Arial,Sans;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+/*TODO: move this to community.css ?! */
+.contentTable .tableComponent td.lastPatch {
+    text-align: center;
+}
+
+
+.contentTable thead th,
+.contentTable tr.odd td,
+.contentTable tr.even td,
+.contentTable tr.odd td.sorting_1,
+.contentTable tr.even td.sorting_1 {
+    background: none;
+    border: 0;
+} 
+
+
+
+/* Table legends */
+
+.contentTable .tableComponent th.legend{
+    width: 120px;
+}
+.contentTable .tableComponent td.legend{
+    text-align: left;
+    text-indent: 15px;
+}
+
+.contentTable .tableComponent .legendLine{
+    border: 1px solid #006CD8;
+    width: 10px;
+}
+
+
+/* Details row */
+
+.contentTable tbody .activeRow,
+.contentTable tbody tr.odd.activeRow, 
+.contentTable tbody tr.even.activeRow {
+    background-color: #eaf4fe;  
+}
+
+.detailsRow{
+    background-color: #eaf4fe;
+    display: none; 
+}
+
+.activeRow .contentTable .tableComponent thead tr, 
+.activeRow .contentTable .tableComponent tbody tr {
+    border: none;
+}
+
+
+
+/* When 'Pagination type: Full numbers' */
+
+.paging_full_numbers {
+    width: 150px;   /*TODO: verificar se isto pode ficar aqui*/
+    float: right;
+}
+
+.paging_full_numbers span.paginate_button, 
+.paging_full_numbers span.paginate_active,
+.paging_full_numbers span.paginate_button:hover {
+    border: 0;
+    /*background-color: #fff;*/
+    background: none;
+    cursor: pointer;
+    margin: 0 0px;
+    padding: 2px 5px;
+}
+
+.paging_full_numbers span.paginate_button {
+    font-size: 9px;
+    color: #242a2c;
+}
+
+.paging_full_numbers span.paginate_active,
+.paging_full_numbers span.paginate_button:hover {
+    font-size: 9px;
+    color: #006CD8;
+}
+
+.paging_full_numbers span.next,
+.paging_full_numbers span.previous {
+    display: none;
+}
+.paging_full_numbers span.first,
+.paging_full_numbers span.last {
+    margin-left: 0;
+}
+
+
+.first {
+    margin-left: 0;
+    padding-left: 0;
+}
+.last {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.first,
+.previous, 
+.next, 
+.last { }
+
+
+
+/*** General Labels ***/
+/* small label (e.g Mozilla.org dashboard, overview ) */
+
+.smallLabel {
+
+}
+.normalLabel{
+    font-size: 12px;
+}
+
+.bigLabel{
+    font-size: 30px;
+}
+
+
+/***************************************************************************
+ *                          FOOTER styling                                 *
+ ***************************************************************************/
+
+.border{
+    background: transparent url('images/footer/border.png') center top no-repeat;
+    border-right: none!important;
+    height: 20px;
+}
+
+#footer{
+    padding: 10px;
+    font-size: 14px;
+    color: #0084d7;
+}
+
+#footer a,
+#footer a:active,
+#footer a:visited{
+    text-decoration: none;
+    color: #006CD8;
+}
+
+#footer a:hover{
+    text-decoration: underline;
+    color: #0084d7;
+}
+
+.footerLink{
+    margin-top: 8px;
+}
+
+.metricsLogo{
+    background: transparent url('images/footer/mozilla_metrics_logo.png') no-repeat;
+    height: 30px;
+    padding-right: 10px;
+}
+
+.aboutFeedback{
+    text-align: center;
+    font-family: 'Trebuchet MS',Arial,Sans;
+    font-size: 14px;
+    color: #006CD8 !important;
+}
+
+.aboutFeedback:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.aboutFeedbackBoard{
+    text-align: center;
+    font-family: 'Trebuchet MS',Arial,Sans;
+    font-size: 14px;
+    margin-top: 7px;
+    color: #006CD8 !important;
+}
+
+.aboutFeedbackBoard:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.footerShare{
+    color: #4D4D4D;
+    font-family: Georgia;
+    font-size: 14px;
+    font-style: italic;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.mediaButton{
+    -webkit-transition: background 300ms ease-in;
+    -moz-transition: background 300ms ease-in;
+    -o-transition: background 300ms ease-in;
+    transition: background 300ms ease-in;
+}
+
+.mediaButton a span {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+}
+
+#footerShare{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 30px;
+}
+
+#facebookButton {
+    background: transparent url('images/footer/facebook_button.png') right top no-repeat;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+div#facebookButton a span:hover {
+    background: transparent url('images/footer/facebook_button_act.png') right top no-repeat;
+}
+
+#twitterButton {
+    background: transparent url('images/footer/twitter_button.png') right top no-repeat;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+div#twitterButton a span:hover {
+    background: transparent url('images/footer/twitter_button_act.png') right top no-repeat;
+}
+
+#bloggerButton {
+    background: transparent url('images/footer/blogger_button.png') right top no-repeat;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+div#bloggerButton a span:hover {
+    background: transparent url('images/footer/blogger_button_act.png') right top no-repeat;
+}
