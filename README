@@ -3,7 +3,7 @@ Here, it is assumed that a folder named /pentaho exists, where the pentaho, tomc
 
 1 ** Required tools:
 - git and svn client
-- install junit (in my case, I it on /usr/share/ant/lib/junit-4.8.2.jar)
+- install junit (in my case, I have it under /usr/share/ant/lib/junit-4.8.2.jar)
 - ant, ivy, JDK, etc
 
 
