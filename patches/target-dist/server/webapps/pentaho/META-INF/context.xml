@@ -4,11 +4,9 @@
 		
 	<Resource auth="Container" driverClassName="org.hsqldb.jdbcDriver" factory="org.apache.commons.dbcp.BasicDataSourceFactory" maxActive="20" maxIdle="5" maxWait="10000" name="jdbc/Quartz" password="password" type="javax.sql.DataSource" url="jdbc:hsqldb:hsql://localhost/quartz" username="pentaho_user" validationQuery="select count(*) from INFORMATION_SCHEMA.SYSTEM_SEQUENCES"/>
   
-  <Resource name="jdbc/monetrix" auth="Container" type="javax.sql.DataSource" maxActive="20"
-    maxIdle="5" maxWait="10000" username="@MONETRIX.USER@" password="@MONETRIX.PASSWORD@"
-    factory="org.apache.commons.dbcp.BasicDataSourceFactory" driverClassName="@MONETRIX.DRIVER@"
-    url="@MONETRIX.URL@" />
-
-  
+<!--      <Resource name="jdbc/metrics_community" auth="Container" type="javax.sql.DataSource" maxActive="20"
+      maxIdle="5" maxWait="10000" username="@DB.COMMUNITY.USER@" password="@DB.COMMUNITY.PASSWORD@"
+      factory="org.apache.commons.dbcp.BasicDataSourceFactory" driverClassName="@DB.COMMUNITY.DRIVER@"
+	url="@DB.COMMUNITY.URL@" />      -->
   
 </Context>
